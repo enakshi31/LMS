@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to left top, #031A9A, #8B53FF);
+}
+
+h2.section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: white;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: white;
+    width: 200px;
+    margin: 0 auto 0 auto;
+}
+
+.section-content {
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    padding: 20px;
+    text-align: center;
+}
+
+.section-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-style: italic;
+    line-height: 1.4;
+    color: aliceblue;
+}
+
+.section-content p {
+    font-size: 1.3rem;
+    color: antiquewhite;
+    line-height: 1.6;
+}
+
+.wrapper {
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+    margin: 40px 0;
+}
+
+.first-carousel .card {
+    max-width: 100%;
+    height: 100%;
+}
+
+.wrapper.first-carousel {
+    max-width: 100%;
+}
+
+.wrapper button {
+    height: 50px;
+    width: 50px;
+    background: #fff;
+    color: #333;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 1.25rem;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.wrapper button:first-child {
+    left: -22px;
+}
+
+.wrapper button:last-child {
+    right: -22px;
+}
+
+.wrapper.first-carousel button:first-child {
+    left: 20px;
+}
+
+.wrapper.first-carousel button:last-child {
+    right: 20px;
+}
+
+.carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.first-carousel .carousel {
+    grid-auto-columns: 100%;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel :where(.card, .img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel.no-transition {
+    scroll-behavior: auto;
+}
+
+.carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel .card {
+    scroll-snap-align: start;
+    height: 342px;
+    list-style: none;
+    background: #333;
+    border-radius: 8px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+/* First Carousel (Home) */
+.wrapper.first-carousel {
+    height: 50%;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.first-carousel .card {
+    height: 100%;
+    width: 100%;
+}
+
+.first-carousel .card .img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.first-carousel .card .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.first-carousel .card h2 {
+    font-weight: 500;
+    font-size: 1.56rem;
+    margin: 10px 0;
+}
+
+.first-carousel .card p {
+    color: #ddd;
+    font-size: 1.31rem;
+}
+
+/* Second Carousel (Courses) */
+
+.second-carousel .card .img {
+    width: 300px;
+    height: 150px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    /* Added space between image and heading */
+}
+
+.second-carousel .card .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.second-carousel .card h3 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 15px 0 5px;
+}
+
+.second-carousel .card p {
+    color: #ddd;
+    font-size: 1.25rem;
+}
+
+/* Third Carousel (E-books) */
+.third-carousel .card .img {
+    width: 150px;
+    height: 200px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    /* Added space between image and heading */
+}
+
+.third-carousel .card .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.third-carousel .card h3 {
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin: 15px 0 5px;
+}
+
+.third-carousel .card p {
+    color: #ddd;
+    font-size: 1.1rem;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    .wrapper {
+        width: 90%;
+    }
+
+    .first-carousel .card {
+        max-width: 100%;
+    }
+
+    .wrapper.first-carousel {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1161px) {
+    .wrapper {
+        width: 90%;
+    }
+
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 12px);
+    }
+
+    .first-carousel .carousel {
+        grid-auto-columns: 100%;
+    }
+
+    .wrapper.first-carousel {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .wrapper {
+        width: 90%;
+    }
+
+    .wrapper .carousel {
+        grid-auto-columns: 100%;
+    }
+
+    .wrapper.first-carousel {
+        width: 100%;
+    }
+
+    .section-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .section-content p {
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .section-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .section-content p {
+        font-size: 0.9rem;
+    }
+}
