@@ -35,4 +35,4 @@ function updateLoginButton() {
         loginLink.href = '#login';
     }
 };
-window.onload = updateLoginButton();
+document.addEventListener('DOMContentLoaded', updateLoginButton);
