@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=10.0, user-scalable=1"/>
+    <title>Question Tracker</title>
+    <link rel="stylesheet" href="../CSS/questionTracker.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+</head>
+<body>
+    <script src="../JS/questionTracker.js" defer></script> 
+    <header>
+        <h1>Question Tracker</h1>
+    </header>
+
+    <div class="section-content">
+        <h3>"The important thing is not to stop questioning. Curiosity has its own reason for existing." - Albert
+            Einstein
+        </h3>
+        <p>Our innovative Question Tracker is your personal learning companion, designed to optimize your educational
+            experience. This powerful tool allows you to log questions as they arise during your studies, ensuring that
+            no
+            query goes unanswered. You can easily review and revisit these questions, track your progress, and see how
+            your
+            understanding evolves over time. The Question Tracker also provides analytics on your learning patterns,
+            helping
+            you identify areas for improvement and celebrate your growth. Embrace your curiosity and let every question
+            be a
+            stepping stone to deeper knowledge.</p>
+    </div>
+
+    <section id="question-form-section">
+        <hr>
+        <h2 id="form-heading">Add New Question</h2>
+        <hr>
+        <form id="question-form">
+            <label for="question-text">Question:</label>
+            <input type="text" id="question-text" required>
+
+            <label for="question-tags">Tags (comma-separated):</label>
+            <input type="text" id="question-tags" required>
+
+            <label for="question-status">Status:</label>
+            <select id="question-status">
+                <option value="Todo">Todo</option>
+                <option value="Solved">Solved</option>
+                <option value="Attempted">Attempted</option>
+            </select>
+
+            <label for="question-difficulty">Difficulty:</label>
+            <select id="question-difficulty">
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select>
+
+            <button type="submit" id="submit-button">Add Question</button>
+        </form>
+    </section>
+
+    <section id="question-list-section">
+        <hr>
+        <h2>All Questions</h2>
+        <hr>
+        <table id="question-table">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Status</th>
+                    <th>Question</th>
+                    <th>Tags</th>
+                    <th>Difficulty</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="question-list">
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>Learning Management System</p>
+        <a id="home">Home</a> |
+        <a id="home">Courses</a> |
+        <a id="home">E-books</a>
+    </footer>
+    
+</body>
+</html>
